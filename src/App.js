@@ -5,6 +5,7 @@ import Boton from './componentes/Boton';
 import Pantalla from './componentes/Pantalla';
 import BotonClear from './componentes/BotonClear';
 import { useState } from 'react';
+// npm install mathjs
 import { evaluate } from 'mathjs';
 
 function App() {
@@ -16,8 +17,12 @@ function App() {
 
   };
   const calcularResultado = ()=>{
-    setInput(evaluate(input));
+    if(input){
+      setInput(evaluate(input));
+  }else{
+    alert("Por favor ingrese valores para realizar los cálculos")
   }
+}
   
   return (
     <div className="App">
